@@ -6,6 +6,9 @@ import { SUBJECTS, subjectBySlug, topicSlug } from "@/lib/taxonomy";
 import PracticeRunner from "@/components/PracticeRunner";
 import FocusBadge from "@/components/FocusBadge";
 
+// Only the pre-rendered pages exist; unknown params 404 instead of rendering on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return SUBJECTS.flatMap((s) => s.topics.map((t) => ({ slug: s.slug, topic: topicSlug(t) })));
 }

@@ -6,6 +6,9 @@ import QuestionView from "@/components/QuestionView";
 import Markdown from "@/components/Markdown";
 import { SubjectLink, TierBadge } from "@/components/ui";
 
+// Only the pre-rendered pages exist; unknown params 404 instead of rendering on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return questions.map((q) => ({ id: q.id }));
 }

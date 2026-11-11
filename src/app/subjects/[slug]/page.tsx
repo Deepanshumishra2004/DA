@@ -10,6 +10,9 @@ import FocusBadge from "@/components/FocusBadge";
 import { practiceCount } from "@/lib/practice";
 import { Card, PageTitle, YearBar, YearLegend } from "@/components/ui";
 
+// Only the pre-rendered pages exist; unknown params 404 instead of rendering on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return SUBJECTS.map((s) => ({ slug: s.slug }));
 }

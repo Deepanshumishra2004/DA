@@ -14,6 +14,9 @@ import FocusBadge from "@/components/FocusBadge";
 import { FOCUS_INFO, subjectFocus, topicFocus } from "@/lib/focus";
 import { Card } from "@/components/ui";
 
+// Only the pre-rendered pages exist; unknown params 404 instead of rendering on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return SUBJECTS.flatMap((s) => s.topics.map((t) => ({ slug: s.slug, topic: topicSlug(t) })));
 }

@@ -7,6 +7,9 @@ import PrintButton from "@/components/PrintButton";
 import FormulaEntries from "@/components/FormulaEntries";
 import { Card } from "@/components/ui";
 
+// Only the pre-rendered pages exist; unknown params 404 instead of rendering on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return SUBJECTS.map((s) => ({ slug: s.slug }));
 }
